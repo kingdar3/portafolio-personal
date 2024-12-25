@@ -1,0 +1,51 @@
+/* Contenedor del slider */
+.slider {
+    width: 75vw; /* Ajusta el tamaño del contenedor */
+    height: 110px; /* Ajusta la altura según tus necesidades */
+    margin: auto;
+    overflow: hidden; /* Oculta el contenido fuera del contenedor */
+    position: relative;
+
+  }
+  
+  /* Contenedor de las diapositivas */
+  .slider .slide-track {
+    display: flex;
+    animation: scroll 40s linear infinite; /* Animación de desplazamiento */
+    -webkit-animation: scroll 40s linear infinite; /* Para compatibilidad con navegadores antiguos */
+    width: calc(200px * 14); /* Ajusta según el número de elementos */
+    gap: 30px; /* Ajusta el espacio entre los íconos */
+  }
+  
+  /* Estilo para cada diapositiva (ícono y título) */
+  .slider .slide {
+    width: 200px; /* Ajusta el tamaño de cada elemento */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  
+  /* Estilo para los íconos */
+  .slider .slide .fa-icon {
+    font-size: 3rem; /* Ajusta el tamaño del ícono */
+  }
+  
+  /* Animación de desplazamiento infinito */
+  @keyframes scroll {
+    0% {
+      transform: translateX(0); /* Empieza en el principio */
+    }
+    100% {
+      transform: translateX(calc(-200px * 7)); /* Mueve el contenido a la izquierda, ajusta este valor según el número de íconos */
+    }
+  }
+  
+  /* Asegúrate de que el ciclo no tenga saltos bruscos */
+  .slider .slide-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  
